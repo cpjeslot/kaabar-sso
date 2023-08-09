@@ -96,14 +96,14 @@ return [
         'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified',
     ],
     'idp' => [
-        'entityId' => 'identity-provider',
+        'entityId' => '<URL>', // https://login.microsoftonline.com/51487458-d114-43b9-1234-4e6r75ee86e9
         'singleSignOnService' => [
-            'url' => 'https://idp.com/sso',
+            'url' => '<URL>', // https://login.microsoftonline.com/51487458-d114-43b9-1234-4e6r75ee86e9/saml2
         ],
         'singleLogoutService' => [
-            'url' => 'https://idp.com/sls',
+            'url' => '<URL>', // https://login.microsoftonline.com/51487458-d114-43b9-1234-4e6r75ee86e9/saml2
         ],
-        'x509cert' => '<x509cert string>',
+        'x509cert' => '<x509cert script>',
     ],
 ];
 ```
