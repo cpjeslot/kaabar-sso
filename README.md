@@ -22,52 +22,18 @@ or add
 to the require section of your `composer.json` file.
 
 
-Usage
------
+Integrate your Yii2 application with a SAML Identity Provider for seamless Single Sign-On authentication.
 
-Once the extension is installed, simply use it in your code by  :
-
-```php
-<?= \kaabar\sso\AutoloadExample::widget(); ?>```
-
-
-
-Kaabar SSO Login
-================
-Kaabar SSO Login
-
-[![Build Status](https://travis-ci.org/asasmoyo/yii2-saml.svg?branch=master)](https://travis-ci.org/asasmoyo/yii2-saml)
-
-Connect Yii 2 application to a Saml Identity Provider for Single Sign On
-
-Installation
-------------
-
-The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
-
-Either run
-
-```
-php composer.phar require --prefer-dist asasmoyo/yii2-saml "*"
-```
-
-or add
-
-```
-"asasmoyo/yii2-saml": "*"
-```
-
-to the require section of your `composer.json` file.
 
 Configuration
 -------------
 
-Register ``asasmoyo\yii2saml\Saml`` to your components in ``config/web.php``.
+Register ``kaabar-sso/yii2-sso\Saml`` to your components in ``config/web.php``.
 
 ```php
 'components' => [
     'saml' => [
-        'class' => 'asasmoyo\yii2saml\Saml',
+        'class' => 'kaabar-sso/yii2-sso\Saml',
         'configFileName' => '@app/config/saml.php', // OneLogin_Saml config file (Optional)
     ]
 ]
@@ -118,7 +84,7 @@ $config = [
 
     'components' => [
         'saml' => [
-            'class' => 'asasmoyo\yii2saml\Saml',
+            'class' => 'kaabar-sso/yii2-sso\Saml',
             'config' => [
                 'sp' => [
                     'entityId' => $spBaseUrl.'/saml/metadata',
@@ -178,7 +144,7 @@ This extension provides 4 actions:
         public function actions() {
             return [
                 'login' => [
-                    'class' => 'asasmoyo\yii2saml\actions\LoginAction',
+                    'class' => 'kaabar-sso/yii2-sso\actions\LoginAction',
                     'returnTo' => Yii::app()->user->returnUrl
                 ]
             ];
@@ -222,7 +188,7 @@ This extension provides 4 actions:
             return [
                 ...
                 'acs' => [
-                    'class' => 'asasmoyo\yii2saml\actions\AcsAction',
+                    'class' => 'kaabar-sso/yii2-sso\actions\AcsAction',
                     'successCallback' => [$this, 'callback'],
                     'successUrl' => Url::to('site/welcome'),
                 ]
@@ -255,7 +221,7 @@ This extension provides 4 actions:
             return [
                 ...
                 'metadata' => [
-                    'class' => 'asasmoyo\yii2saml\actions\MetadataAction'
+                    'class' => 'kaabar-sso/yii2-sso\actions\MetadataAction'
                 ]
             ];
         }
@@ -272,7 +238,7 @@ This extension provides 4 actions:
             return [
                 ...
                 'logout' => [
-                    'class' => 'asasmoyo\yii2saml\actions\LogoutAction',
+                    'class' => 'kaabar-sso/yii2-sso\actions\LogoutAction',
                     'returnTo' => Url::to('site/bye'),
                     'parameters' => [],
                     'nameId' => $session->get('nameId'),
@@ -300,7 +266,7 @@ This extension provides 4 actions:
             return [
                 ...
                 'sls' => [
-                    'class' => 'asasmoyo\yii2saml\actions\SlsAction',
+                    'class' => 'kaabar-sso/yii2-sso\actions\SlsAction',
                     'successUrl' => Url::to('site/bye'),
                     'logoutIdP' => false, // if you don't want to logout on idp
                 ]
