@@ -111,7 +111,7 @@ return [
 Usage
 -----
 
-This extension provides 4 actions:
+This extension provides 5 actions:
 
 1. LoginAction
 
