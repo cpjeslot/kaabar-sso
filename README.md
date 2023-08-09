@@ -39,7 +39,7 @@ Register ``kaabar\sso\Saml`` to your components in ``config/web.php``.
 ]
 ```
 
-This component requires a ``OneLogin_Saml`` configuration stored in a php file. The default value for ``configFileName`` is ``@app/config/saml.php`` so make sure to create this file before. This file must returns the ``OneLogin_Saml`` configuration. See this [link](https://github.com/onelogin/php-saml/blob/master/settings_example.php) for example configuration.
+To enable this component, a ``OneLogin_Saml`` configuration should be stored in a PHP file. By default, ``configFileName`` is set as ``@app/config/saml.php``, so ensure you create this file beforehand. The file should return the ``OneLogin_Saml`` configuration. For a sample configuration, refer to the [link](https://github.com/onelogin/php-saml/blob/master/settings_example.php) provided.
 
 ```php
 <?php
