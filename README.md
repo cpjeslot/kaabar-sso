@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](https://getcom
 Either run
 
 ```
-php composer.phar require --prefer-dist kaabar-sso/yii2-kaabar-sso "*"
+php composer.phar require --prefer-dist kaabar-sso/yii2-sso "*"
 ```
 
 or add
 
 ```
-"kaabar-sso/yii2-kaabar-sso": "*"
+"kaabar-sso/yii2-sso": "*"
 ```
 
 to the require section of your `composer.json` file.
