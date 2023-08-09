@@ -28,12 +28,12 @@ Integrate your Yii2 application with a SAML Identity Provider for seamless Singl
 Configuration
 -------------
 
-Register ``kaabar-sso/yii2-sso\Saml`` to your components in ``config/web.php``.
+Register ``kaabar\sso\Saml`` to your components in ``config/web.php``.
 
 ```php
 'components' => [
     'saml' => [
-        'class' => 'kaabar-sso/yii2-sso\Saml',
+        'class' => 'kaabar\sso\Saml',
         'configFileName' => '@app/config/saml.php', // OneLogin_Saml config file (Optional)
     ]
 ]
@@ -84,7 +84,7 @@ $config = [
 
     'components' => [
         'saml' => [
-            'class' => 'kaabar-sso/yii2-sso\Saml',
+            'class' => 'kaabar\sso\Saml',
             'config' => [
                 'sp' => [
                     'entityId' => $spBaseUrl.'/saml/metadata',
@@ -144,7 +144,7 @@ This extension provides 4 actions:
         public function actions() {
             return [
                 'login' => [
-                    'class' => 'kaabar-sso/yii2-sso\actions\LoginAction',
+                    'class' => 'kaabar\sso\actions\LoginAction',
                     'returnTo' => Yii::app()->user->returnUrl
                 ]
             ];
@@ -188,7 +188,7 @@ This extension provides 4 actions:
             return [
                 ...
                 'acs' => [
-                    'class' => 'kaabar-sso/yii2-sso\actions\AcsAction',
+                    'class' => 'kaabar\sso\actions\AcsAction',
                     'successCallback' => [$this, 'callback'],
                     'successUrl' => Url::to('site/welcome'),
                 ]
@@ -221,7 +221,7 @@ This extension provides 4 actions:
             return [
                 ...
                 'metadata' => [
-                    'class' => 'kaabar-sso/yii2-sso\actions\MetadataAction'
+                    'class' => 'kaabar\sso\actions\MetadataAction'
                 ]
             ];
         }
@@ -238,7 +238,7 @@ This extension provides 4 actions:
             return [
                 ...
                 'logout' => [
-                    'class' => 'kaabar-sso/yii2-sso\actions\LogoutAction',
+                    'class' => 'kaabar\sso\actions\LogoutAction',
                     'returnTo' => Url::to('site/bye'),
                     'parameters' => [],
                     'nameId' => $session->get('nameId'),
@@ -266,7 +266,7 @@ This extension provides 4 actions:
             return [
                 ...
                 'sls' => [
-                    'class' => 'kaabar-sso/yii2-sso\actions\SlsAction',
+                    'class' => 'kaabar\sso\actions\SlsAction',
                     'successUrl' => Url::to('site/bye'),
                     'logoutIdP' => false, // if you don't want to logout on idp
                 ]
